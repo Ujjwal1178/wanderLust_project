@@ -1,0 +1,33 @@
+<nav class="navbar  navbar-expand-lg navbar-expand-md bg-body-tertiary sticky-top border-bottom " data-bs-theme="light">
+    <div class="container-fluid" data-bs-theme="light">
+        <a class="navbar-brand" href="/listings"><i class='bx bxl-airbnb' style='color:#ef0505'><span>WanderLust</span></i></a>
+      <button class="navbar-toggler dropdown" data-bs-theme="light"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse dropdown" id="navbarNavAltMarkup" data-bs-theme="light" >
+      <div class="navbar-nav">
+        <a  class="nav-link" href="/listings">Explore</a>
+        
+      </div>
+      <div class="navbar-nav ms-auto" >
+        <a  class="nav-link" href="/listings/new">Airbnb your home</a>
+        <% if(!currUser){%>
+        <a  class="nav-link"   href="/signup"><b>Sign up</b></a>
+        <a  class="nav-link" href="/login"><b>Log in</b></a>
+        <%}  %>
+        <% if(currUser) {%>
+          <a  class="nav-link"id="ghost" href="/logout"><b>Log out</b></a>
+        <% } %>
+        
+        <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
+      </div>
+    </div>
+   
+
+
+     
+    <!-- </div> -->
+  </div>
+</nav>
+
+

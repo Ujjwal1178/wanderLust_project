@@ -1,0 +1,105 @@
+<% layout('/layouts/boilerplate') %>
+<body>
+  <div class="container new-input">
+    <h1>Creating New Listing</h1>
+    <br />
+    <form
+      action="/listings"
+      method="post"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          name="listing[title]"
+          aria-describedby="emailHelp"
+          required
+        />
+        <div class="valid-feedback">Title looks good!</div>
+        <div class="invalid-feedback">Please enter a valid Title</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label"
+          >Description</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          name="listing[description]"
+          id="exampleInputPassword1"
+          required
+        />
+        <div class="invalid-feedback">Please enter a short description</div>
+      </div>
+    
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Upload Image</label>
+        <input
+          type="file"
+          class="form-control"
+          name="listing[image]"
+          id="exampleInputPassword1"
+          required
+        />
+        <div class="invalid-feedback">Please upload an image</div>
+      </div>
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="exampleInputPassword1" class="form-label">Price</label>
+          <input
+            type="number"
+            class="form-control"
+            name="listing[price]"
+            id="exampleInputPassword1"
+            required
+          />
+          <div class="invalid-feedback">Please enter a valid price</div>
+        </div>
+        <div class="mb-3 col-md-4">
+          <label for="exampleInputPassword1" class="form-label">Location</label>
+          <input
+            type="text"
+            class="form-control"
+            name="listing[location]"
+            id="exampleInputPassword1"
+            required
+          />
+          <div class="invalid-feedback">Please enter a valid Location</div>
+        </div>
+        <div class="mb-3 col-md-4">
+          <label for="category" class="form-label">Category</label>
+          <select id="category" name="listing[category]" class="form-select" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            <option value="Trending">Trending</option>
+            <option value="Rooms">Rooms</option>
+            <option value="Iconic_Cities">Iconic Cities</option>
+            <option value="Mountains">Mountains</option>
+            <option value="Castle">Castle</option>
+            <option value="Amazing_Pools">Amazing Pools</option>
+            <option value="Camping">Camping</option>
+            <option value="Farms">Farms</option>
+            <option value="Arctic">Arctic</option>
+          </select>
+          <div class="invalid-feedback">Please enter a valid Category</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Country</label>
+        <input
+          type="text"
+          class="form-control"
+          name="listing[country]"
+          id="exampleInputPassword1"
+          required
+        />
+        <div class="invalid-feedback">Please enter a valid country name!</div>
+      </div>
+      <button type="submit" class="btn btn-primary mb-3">Create</button>
+    </form>
+  </div>
+</body>

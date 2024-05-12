@@ -1,0 +1,65 @@
+<% layout('/layouts/boilerplate') %>
+<body>
+
+
+    
+    <div class="container new-input" >
+        <h1>Edit your listing</h1>
+        <br>
+        <form method="post" action="/listings/<%= user._id %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+            <div class="mb-3 ed">
+              <label for="exampleInputEmail1" class="form-label">Title</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="listing[title]" aria-describedby="emailHelp" required value="<%=user.title%>"> 
+              <div class="valid-feedback">Title looks good!</div>
+              <div class="invalid-feedback">Please enter a valid Title</div>
+            </div>
+            <div class="mb-3  ed">
+              <label for="exampleInputPassword1" class="form-label">Description</label>
+              <input type="text" class="form-control" name="listing[description]" id="exampleInputPassword1" value="<%=user.description%>" required>
+              <div class="invalid-feedback">Please enter a short description</div>
+            </div>
+            <div class="mb-3 preview-image">
+                <span style="display: block;" class="mb-1">Original Listing image</span>
+                <img src="<%=user.image.url%>" alt="">
+            </div>
+            <div class="mb-3 ed">
+                <label for="exampleInputPassword2" class="form-label">Upload new image</label>
+                <input type="file" class="form-control" name="listing[image]" id="exampleInputPassword2">
+            </div>
+            <div class="row">
+                <div class="mb-3 col-md-4 ed">
+                    <label for="exampleInputPassword3" class="form-label">Price</label>
+                    <input type="number" step="0.01" class="form-control" name="listing[price]" id="exampleInputPassword3" value="<%=user.price%>" required>
+                    <div class="invalid-feedback">Please enter a valid price</div>
+                </div>
+                <div class="mb-3 col-md-4 ed">
+                    <label for="exampleInputPassword4" class="form-label">Location</label>
+                    <input type="text" class="form-control" name="listing[location]" id="exampleInputPassword4" value="<%=user.location%>" required>
+                    <div class="invalid-feedback">Please enter a valid Location</div>
+                </div>
+                <div class="mb-3 col-md-4">
+                    <label for="category" class="form-label">Category</label>
+                    <select id="category" name="listing[category]" class="form-select" aria-label="Default select example" required>
+                      <option selected>Open this select menu</option>
+                      <option value="Trending">Trending</option>
+                      <option value="Rooms">Rooms</option>
+                      <option value="Iconic_Cities">Iconic Cities</option>
+                      <option value="Mountains">Mountains</option>
+                      <option value="Castle">Castle</option>
+                      <option value="Amazing_Pools">Amazing Pools</option>
+                      <option value="Camping">Camping</option>
+                      <option value="Farms">Farms</option>
+                      <option value="Arctic">Arctic</option>
+                    </select>
+                    <div class="invalid-feedback">Please enter a valid Category</div>
+                  </div>
+            </div>
+            <div class="mb-3 ed">
+                <label for="exampleInputPassword5" class="form-label">Country</label>
+                <input type="text" class="form-control" name="listing[country]" id="exampleInputPassword6" value="<%=user.country%>" required>
+                <div class="invalid-feedback">Please enter a valid country name!</div>
+            </div>
+            <button type="submit" class="btn btn-danger mb-3">Edit Listing</button>
+          </form>
+    </div>
+</body>

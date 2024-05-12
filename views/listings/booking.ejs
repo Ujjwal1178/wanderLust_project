@@ -1,0 +1,54 @@
+<% layout('/layouts/boilerplate') %>
+
+
+<div class="container new-input" >
+    <h1>Book yourself this listing</h1>
+    <div class="mb-3 preview-image">
+        <span style="display: block;" class="mb-1">Original Listing image</span>
+        <img src="<%=user.image.url%>" alt="">
+    </div>
+    <br>
+    <form method="post" action="/listings/booking" novalidate class="needs-validation" enctype="multipart/form-data">
+        
+        <div class="mb-3 ed">
+          <label for="bookingName" class="form-label">Enter Your Name</label>
+          <input type="text" id="bookingName" name="bookingName" class="form-control" required>
+          <div class="invalid-feedback">Please enter your name</div>
+        </div>
+        <div class="mb-3  ed">
+            <label for="bookingEmail" class="form-label">Enter Your Email Address</label>
+            <input type="email" id="bookingEmail" name="bookingEmail" class="form-control" required>
+            <div class="invalid-feedback">Please enter a valid email address</div>    
+        </div>
+        <div class="mb-3 ed">
+            <label for="bookingAddress" class="form-label">Enter Your Permanent Address</label>
+            <input type="text" id="bookingAddress" name="bookingAddress" class="form-control" required>
+            <div class="invalid-feedback">Please enter a valid resindential address</div>     
+        </div>
+        <div class="row">
+            <div class="mb-3 col-md-4 ed">
+                <label for="bookingAge" class="form-label">Enter Your Age</label>
+                <input type="number" id="bookingAge" class="form-control" name="bookingAge" min="18" max="100" class="form-range" required>
+                <div class="invalid-feedback">Age should be greater than 18</div>    
+            </div>
+            <div class="mb-3 col-md-4 ed">
+                <label for="bookingNumber" class="form-label">Enter PhoneNo.</label>
+                <input type="tel" class="form-control" id="bookigNumber" name="bookingNumber" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="xxxxxxxxxx" required>
+                <div class="invalid-feedback">Enter a valid 10 digit PhoneNo</div>
+            </div>
+            <div class="mb-3 col-md-4 ed">
+                <label for="bookingCount" class="form-label">Enter People Count</label>
+                <input type="number" id="bookingCount" class="form-control" name="bookingCount" min="1" max="15" class="form-range" required>
+                <div class="invalid-feedback">Enter a valid people Count</div> 
+            </div>
+        </div>
+        <div class="mb-3 ed">
+         
+        </div>
+        <button type="submit" class="btn btn-danger mb-3">Initate Request</button>
+      </form>
+</div>
+
+</form>
+
+
