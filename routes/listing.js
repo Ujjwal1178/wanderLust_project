@@ -63,7 +63,7 @@ router.get(
   "/:id/edit",
   isloggedInEdit,
   isOwner,
-  wrapAsync(listingController.editListingFrom)
+  wrapAsync(listingController.editListingFrom )
 );
 
 router.get('/listingcategory/:value',listingController.listingcategory);

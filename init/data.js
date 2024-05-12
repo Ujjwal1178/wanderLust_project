@@ -7,8 +7,8 @@ const sampleListings = [
         filename : "listingimage",
       },
       price: 1900.99,
-      location: "New York",
-      country: "USA"
+      location: "New York" ,
+      country: "USA "
     },
     {
       title: "Golden Sands Villa",

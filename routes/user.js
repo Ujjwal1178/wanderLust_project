@@ -11,7 +11,7 @@ router
   .get(userController.signupRoute)
   .post(wrapAsync(userController.newUser));
 
-// login route && login form data post req
+// login route && login form data post rq
 router
   .route("/login")
   .get(userController.loginFormRender)

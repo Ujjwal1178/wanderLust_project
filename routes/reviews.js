@@ -8,7 +8,7 @@ const reviewController = require('../controllers/reviews');
 
 
 //Review Post request || New Review
-router.post("/",reviewChecker,validateReview,wrapAsync(reviewController.newReview));
+router.post("/",reviewChecker,validateReview,wrapAsync(reviewController.newReview)) ;
 
 //Delete review Route
 router.delete("/:reviewId",reviewChecker,isReviewAuthor,wrapAsync(reviewController.destroyReview));

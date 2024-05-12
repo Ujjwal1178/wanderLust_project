@@ -109,7 +109,7 @@ module.exports.editListingFrom = async (req, res) => {
 module.exports.bookListing = async (req,res,next)=>{
   const {id} = req.params;
   let user = await Listing.findById(id);
-  console.log(id);
+  console.log(id) ;
   res.render('listings/booking.ejs',{user});
 }
 
